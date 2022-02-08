@@ -1,26 +1,15 @@
 {
   "projects": [
     {
-      "name": "dfgvc",
-      "budget": "23123",
+      "name": "TESTE",
+      "budget": "10000",
       "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
+        "id": "4",
+        "name": "Planejamento"
       },
       "costs": 0,
       "services": [],
       "id": 1
-    },
-    {
-      "name": "dfgvc",
-      "budget": "23123",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "costs": 0,
-      "services": [],
-      "id": 2
     }
   ],
   "categories": [
