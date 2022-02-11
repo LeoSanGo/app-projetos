@@ -7,8 +7,21 @@
         "id": "4",
         "name": "Planejamento"
       },
-      "costs": 0,
-      "services": [],
+      "cost": 800,
+      "services": [
+        {
+          "name": "passagem cabo de rede",
+          "cost": "300",
+          "description": "cabos",
+          "id": "c3e05f7f-dc85-429a-9441-ffc076e56945"
+        },
+        {
+          "name": "nivelamento de estruturas",
+          "cost": "500",
+          "description": "teste",
+          "id": "3b628ea4-d3dc-41a5-9275-493c65c10e74"
+        }
+      ],
       "id": 1
     },
     {
@@ -18,9 +31,44 @@
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "costs": 0,
+      "cost": 0,
       "services": [],
       "id": 2
+    },
+    {
+      "name": "TEST T",
+      "budget": "20000",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 200,
+      "services": [
+        {
+          "name": "serv 1",
+          "cost": "100",
+          "description": "dd",
+          "id": "bb3c0ef8-66d1-4f3d-b7ea-9e4fef2dd4fe"
+        },
+        {
+          "name": "serv 1",
+          "cost": "100",
+          "description": "dd",
+          "id": "076015d6-9c03-426a-b6aa-b250715f6cab"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "Desenvolvimento de app",
+      "budget": "50000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 4
     }
   ],
   "categories": [
