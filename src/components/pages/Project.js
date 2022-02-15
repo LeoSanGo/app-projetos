@@ -33,7 +33,7 @@ function Project() {
         .then((resp) => resp.json())
         .then((data) => {
           setProject(data);
-          setServices(data.services)
+          setServices(data.services);
         })
         .catch((err) => console.log(err));
     }, 1000);
@@ -102,13 +102,34 @@ function Project() {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        setShowServiceForm(false)
+        setShowServiceForm(false);
       })
       .catch((err) => console.log(err));
   }
 
-  function removeService() {
+  function removeService(id, cost) {
+    console.log("kfgjhjdvh");
+    const servicesUpdated = project.services.filter(
+      (service) => service.id !== id,
+    );
+    const projectUpdated = project;
+    projectUpdated.services = servicesUpdated;
+    projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost);
 
+    fetch(`http:///localhost:5000/projects/${projectUpdated}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(projectUpdated),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProject(projectUpdated);
+        setServices(servicesUpdated);
+        setMessage('Serviço Removido com sucesso!');
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
@@ -161,9 +182,9 @@ function Project() {
             </div>
             <h2>Serviços</h2>
             <Container customClass="start">
-              {services.length > 0 && 
+              {services.length > 0 &&
                 services.map((service) => (
-                  <ServiceCard 
+                  <ServiceCard
                     id={service.id}
                     name={service.name}
                     cost={service.cost}
@@ -171,8 +192,7 @@ function Project() {
                     key={service.id}
                     handleRemove={removeService}
                   />
-                ))
-              }
+                ))}
               {services.length === 0 && <p>Não há serviços cadastrados</p>}
             </Container>
           </Container>

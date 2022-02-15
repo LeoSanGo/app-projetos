@@ -1,9 +1,9 @@
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useNavigate } from 'react-router-dom';
 import ProjectForm from '../project/ProjectForm';
 import styles from './NewProject.module.css';
 
 function NewProject() {
-  const history = useHistory();
+  const navigate = useNavigate();
   
   function createPost(project) {
     // initializa cost and services
@@ -20,7 +20,7 @@ function NewProject() {
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
-        history.push('/projects', { message: 'Projeto criado com sucesso' })
+        navigate('/projects', { message: 'Projeto criado com sucesso' })
       })
         .catch((err) => console.log(err))
   }
